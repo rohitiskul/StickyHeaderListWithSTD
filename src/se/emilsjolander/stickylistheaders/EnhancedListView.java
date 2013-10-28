@@ -341,6 +341,7 @@ public class EnhancedListView extends ListView {
 	private int mValidDelayedMsgId;
 	private Handler mHideUndoHandler = new HideUndoPopupHandler();
 	private Button mUndoButton;
+	private Integer[] mSkipPositions;
 
 	// END Swipe-To-Dismiss
 
@@ -672,6 +673,7 @@ public class EnhancedListView extends ListView {
 			int x = (int) ev.getRawX() - listViewCoords[0];
 			int y = (int) ev.getRawY() - listViewCoords[1];
 			View child;
+			int breakIndex = -1;
 			for (int i = getHeaderViewsCount(); i < childCount; i++) {
 				child = getChildAt(i);
 				if (child != null) {
@@ -684,17 +686,24 @@ public class EnhancedListView extends ListView {
 							if (swipingView != null) {
 								mSwipeDownView = swipingView;
 								mSwipeDownChild = child;
+								breakIndex = i;
 								break;
 							}
 						}
 						// If no swiping layout has been found, swipe the whole
 						// child
 						mSwipeDownView = mSwipeDownChild = child;
+						breakIndex = i;
 						break;
 					}
 				}
 			}
-
+			if (breakIndex != -1 && mSkipPositions != null) {
+				for (int i = 0; i < mSkipPositions.length; i++) {
+					if (breakIndex == mSkipPositions[i])
+						return super.onTouchEvent(ev);
+				}
+			}
 			if (mSwipeDownView != null) {
 				mDownX = ev.getRawX();
 				mDownPosition = getPositionForView(mSwipeDownView) - getHeaderViewsCount();
@@ -951,6 +960,9 @@ public class EnhancedListView extends ListView {
 		case END:
 			return rtlSign * deltaX > 0;
 		}
+	}
 
+	public void setSkipPositions(Integer... positions) {
+		mSkipPositions = positions;
 	}
 }
