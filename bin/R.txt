@@ -13,14 +13,10 @@ int drawable popup_bg 0x7f020001
 int drawable undo_btn_bg 0x7f020002
 int drawable undo_btn_bg_focused 0x7f020003
 int drawable undo_btn_bg_pressed 0x7f020004
-int id text 0x7f080000
-int id undo 0x7f080001
+int id text 0x7f070000
+int id undo 0x7f070001
 int layout undo_popup 0x7f030000
-int string item_deleted 0x7f060002
-int string n_items_deleted 0x7f060003
-int string undo 0x7f060000
-int string undo_all 0x7f060001
-int style fade_animation 0x7f070000
+int style fade_animation 0x7f060000
 int[] styleable StickyListHeadersListView { 0x0101007f, 0x010100d5, 0x010100d6, 0x010100d7, 0x010100d8, 0x010100d9, 0x010100e0, 0x010100eb, 0x010100fb, 0x010100fc, 0x010100fe, 0x01010101, 0x01010129, 0x0101012a, 0x0101012b, 0x01010226, 0x010103a5, 0x7f010000, 0x7f010001 }
 int styleable StickyListHeadersListView_android_cacheColorHint 11
 int styleable StickyListHeadersListView_android_choiceMode 14

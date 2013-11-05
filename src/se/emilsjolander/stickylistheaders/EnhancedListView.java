@@ -771,6 +771,7 @@ public class EnhancedListView extends ListView {
 					cancelEvent.setAction(MotionEvent.ACTION_CANCEL
 							| (ev.getActionIndex() << MotionEvent.ACTION_POINTER_INDEX_SHIFT));
 					super.onTouchEvent(cancelEvent);
+					cancelEvent.recycle();
 				}
 			} else {
 				// If we swiped into wrong direction, act like this was the new
