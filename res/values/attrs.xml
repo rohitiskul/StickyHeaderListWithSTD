@@ -2,7 +2,8 @@
 <resources>
 
     <declare-styleable name="StickyListHeadersListView">
-        <!-- Android attributes -->
+
+        <!-- View attributes -->
         <attr name="android:clipToPadding" />
         <attr name="android:padding" />
         <attr name="android:paddingLeft" />
@@ -17,6 +18,7 @@
         <attr name="android:choiceMode" />
         <attr name="android:drawSelectorOnTop" />
         <attr name="android:fastScrollEnabled" />
+        <attr name="android:fastScrollAlwaysVisible" />
         <attr name="android:listSelector" />
         <attr name="android:scrollingCache" />
         <attr name="android:scrollbarStyle" />
