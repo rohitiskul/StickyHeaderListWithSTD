@@ -17,7 +17,7 @@ int id text 0x7f070000
 int id undo 0x7f070001
 int layout undo_popup 0x7f030000
 int style fade_animation 0x7f060000
-int[] styleable StickyListHeadersListView { 0x0101007f, 0x010100d5, 0x010100d6, 0x010100d7, 0x010100d8, 0x010100d9, 0x010100e0, 0x010100eb, 0x010100fb, 0x010100fc, 0x010100fe, 0x01010101, 0x01010129, 0x0101012a, 0x0101012b, 0x01010226, 0x010103a5, 0x7f010000, 0x7f010001 }
+int[] styleable StickyListHeadersListView { 0x0101007f, 0x010100d5, 0x010100d6, 0x010100d7, 0x010100d8, 0x010100d9, 0x010100e0, 0x010100eb, 0x010100fb, 0x010100fc, 0x010100fe, 0x01010101, 0x01010129, 0x0101012a, 0x0101012b, 0x01010226, 0x01010335, 0x010103a5, 0x7f010000, 0x7f010001 }
 int styleable StickyListHeadersListView_android_cacheColorHint 11
 int styleable StickyListHeadersListView_android_choiceMode 14
 int styleable StickyListHeadersListView_android_clipToPadding 7
@@ -25,6 +25,7 @@ int styleable StickyListHeadersListView_android_divider 12
 int styleable StickyListHeadersListView_android_dividerHeight 13
 int styleable StickyListHeadersListView_android_drawSelectorOnTop 9
 int styleable StickyListHeadersListView_android_fadingEdgeLength 6
+int styleable StickyListHeadersListView_android_fastScrollAlwaysVisible 16
 int styleable StickyListHeadersListView_android_fastScrollEnabled 15
 int styleable StickyListHeadersListView_android_listSelector 8
 int styleable StickyListHeadersListView_android_padding 1
@@ -32,8 +33,8 @@ int styleable StickyListHeadersListView_android_paddingBottom 5
 int styleable StickyListHeadersListView_android_paddingLeft 2
 int styleable StickyListHeadersListView_android_paddingRight 4
 int styleable StickyListHeadersListView_android_paddingTop 3
-int styleable StickyListHeadersListView_android_requiresFadingEdge 16
+int styleable StickyListHeadersListView_android_requiresFadingEdge 17
 int styleable StickyListHeadersListView_android_scrollbarStyle 0
 int styleable StickyListHeadersListView_android_scrollingCache 10
-int styleable StickyListHeadersListView_hasStickyHeaders 17
-int styleable StickyListHeadersListView_isDrawingListUnderStickyHeader 18
+int styleable StickyListHeadersListView_hasStickyHeaders 18
+int styleable StickyListHeadersListView_isDrawingListUnderStickyHeader 19
