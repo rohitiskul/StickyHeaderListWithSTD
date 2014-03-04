@@ -42,7 +42,7 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
 			mHeaderCache.clear();
 			AdapterWrapper.super.notifyDataSetInvalidated();
 		}
-		
+
 		@Override
 		public void onChanged() {
 			AdapterWrapper.super.notifyDataSetChanged();
@@ -155,27 +155,30 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
 	private boolean previousPositionHasSameHeader(int position) {
 		return position != 0
 				&& mDelegate.getHeaderId(position) == mDelegate
-						.getHeaderId(position - 1);
+				.getHeaderId(position - 1);
 	}
 
 	@Override
 	public WrapperView getView(int position, View convertView, ViewGroup parent) {
 		WrapperView wv = (convertView == null) ? new WrapperView(mContext) : (WrapperView) convertView;
-		View item = mDelegate.getView(position, wv.mItem, wv);
-		View header = null;
-		if (previousPositionHasSameHeader(position)) {
-			recycleHeaderIfExists(wv);
-		} else {
-			header = configureHeader(wv, position);
-		}
-		if((item instanceof Checkable) && !(wv instanceof CheckableWrapperView)) {
-			// Need to create Checkable subclass of WrapperView for ListView to work correctly
-			wv = new CheckableWrapperView(mContext);
-		} else if(!(item instanceof Checkable) && (wv instanceof CheckableWrapperView)) {
-			wv = new WrapperView(mContext);
-		}
-		wv.update(item, header, mDivider, mDividerHeight);
-		return wv;
+		if(wv != null){
+			View item = mDelegate.getView(position, wv.mItem, wv);
+			View header = null;
+			if (previousPositionHasSameHeader(position)) {
+				recycleHeaderIfExists(wv);
+			} else {
+				header = configureHeader(wv, position);
+			}
+			if((item instanceof Checkable) && !(wv instanceof CheckableWrapperView)) {
+				// Need to create Checkable subclass of WrapperView for ListView to work correctly
+				wv = new CheckableWrapperView(mContext);
+			} else if(!(item instanceof Checkable) && (wv instanceof CheckableWrapperView)) {
+				wv = new WrapperView(mContext);
+			}
+			wv.update(item, header, mDivider, mDividerHeight);
+			return wv;
+		} else 
+			return null;
 	}
 
 	public void setOnHeaderClickListener(OnHeaderClickListener onHeaderClickListener){
